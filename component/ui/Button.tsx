@@ -26,4 +26,4 @@ const Button = ({ type, text, onClick, actionButton }: buttonProps) => {
   )
 }
 
-export default Button
+export { Button }

@@ -19,4 +19,4 @@ const Input = ({ name, type, placeholder, value }: inputProps) => {
   )
 }
 
-export default Input
+export { Input }
