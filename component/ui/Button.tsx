@@ -22,6 +22,7 @@ const Button = ({ type, text, onClick, actionButton }: buttonProps) => {
       >
         {text}
       </button>
+
     </>
   )
 }
