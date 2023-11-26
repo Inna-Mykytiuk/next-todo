@@ -1,30 +1,34 @@
 "use client"
-import { useRef, ReactNode } from "react";
+import { useRef } from "react";
+import { ReactNode } from "react";
 
-interface formProps {
+interface FormProps {
+  children: ReactNode;
   className?: string;
-  children: React.ReactNode;
-  onsubmit?: () => void;
+  onSubmit?: () => void;
   action: (formData: FormData) => Promise<void | boolean>;
 }
 
-const Form = ({ children, action, className, onsubmit }: formProps) => {
+const Form = ({
+  children,
+  action,
+  className,
+  onSubmit,
+}: FormProps) => {
   const ref = useRef<HTMLFormElement>(null);
-
   return (
     <form
       className={className}
-      onSubmit={onsubmit}
+      onSubmit={onSubmit}
       ref={ref}
       action={async (formData) => {
-        await action(formData)
+        await action(formData);
         ref.current?.reset();
       }}
-
     >
       {children}
     </form>
-  )
-}
+  );
+};
 
 export { Form }

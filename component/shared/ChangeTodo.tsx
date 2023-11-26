@@ -6,21 +6,23 @@ import { changeStatus } from "@/app/actions/todoActions"
 import { todoType } from "@/types/todoTypes"
 
 const ChangeTodo = ({ todo }: { todo: todoType }) => {
+
+
+
   return (
-    <div>
-      <Form action={changeStatus}>
-        <Input
-          name="inputId"
-          value={todo.id}
-          type="hidden"
-        />
-        <Button
-          type="submit"
-          actionButton={todo.action}
-          text={<AiOutlineCheckCircle />}
-        />
-      </Form>
-    </div>
+
+    <Form action={changeStatus}>
+      <Input
+        name="inputId"
+        value={todo.id}
+        type="hidden"
+      />
+      <Button
+        type="submit"
+        actionButton
+        text={<AiOutlineCheckCircle />}
+      />
+    </Form>
   )
 }
 
